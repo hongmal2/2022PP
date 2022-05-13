@@ -7,8 +7,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager GM;
 
-    GameObject canvas;
-
     public bool isGame = false;
     public KeyCode jump { get; set; }
     public KeyCode forward { get; set; }
@@ -35,16 +33,13 @@ public class GameManager : MonoBehaviour
         right = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("rightKey", "D"));
     }
 
-    private void Start()
+    public void GameSave()
     {
-        canvas = GameObject.Find("Canvas");
+        //PlayerPrefs.SetFloat
     }
-    private void Update()
+
+    public void GameLoad()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && isGame)
-        {
-            canvas.SetActive(true);
-        }
 
     }
 }
